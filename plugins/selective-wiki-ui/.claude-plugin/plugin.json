@@ -1,0 +1,9 @@
+{
+  "name": "selective-wiki-ui",
+  "version": "1.0.9",
+  "description": "Selective wiki dashboard: continuation, freshness, history, local search and user-triggered actions.",
+  "license": "MIT",
+  "author": {
+    "name": "Selective LLM Wiki contributors"
+  }
+}

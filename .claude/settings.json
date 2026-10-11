@@ -1,0 +1,40 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "task_root=\"$PWD\"; while [ ! -f \"$task_root/scripts/session_start.py\" ] || [ ! -f \"$task_root/state.md\" ]; do [ \"$task_root\" = / ] && exit 0; task_root=$(dirname \"$task_root\"); done; python3 \"$task_root/scripts/session_start.py\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "task_root=\"$PWD\"; while [ ! -f \"$task_root/scripts/guard_memory.py\" ] || [ ! -f \"$task_root/state.md\" ]; do [ \"$task_root\" = / ] && exit 0; task_root=$(dirname \"$task_root\"); done; python3 \"$task_root/scripts/guard_memory.py\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "task_root=\"$PWD\"; while [ ! -f \"$task_root/scripts/guard_memory.py\" ] || [ ! -f \"$task_root/state.md\" ]; do [ \"$task_root\" = / ] && exit 0; task_root=$(dirname \"$task_root\"); done; python3 \"$task_root/scripts/guard_memory.py\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

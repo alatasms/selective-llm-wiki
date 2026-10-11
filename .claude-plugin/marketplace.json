@@ -1,0 +1,14 @@
+{
+  "name": "selective-llm-wiki",
+  "owner": {
+    "name": "Selective LLM Wiki contributors"
+  },
+  "plugins": [
+    {
+      "name": "selective-wiki-ui",
+      "source": "./plugins/selective-wiki-ui",
+      "description": "Local continuation dashboard, note search and explicit wiki actions."
+    }
+  ],
+  "description": "Selective Markdown memory tools and the Claude Code wiki dashboard."
+}
